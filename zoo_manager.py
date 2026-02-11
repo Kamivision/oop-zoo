@@ -10,8 +10,8 @@ class Animal():
     def __repr__(self):
         return f"class Animal: {self.species}"
         
-    def speak(self, sound):
-        return f"{self.name} says {sound}!"
+    def speak(self):
+        return "Animal sound"
     
     @property
     def name(self):
@@ -20,7 +20,7 @@ class Animal():
     @name.setter
     def name(self, name_val):
         if isinstance(name_val, str):
-            self._name = name_val.strip().title()
+            self._name = name_val.strip()
         else:
             raise Exception("A name should be a `str` value")
         
@@ -31,7 +31,7 @@ class Animal():
     @species.setter
     def species(self, species_val):
         if isinstance(species_val, str):
-            self._species = species_val.strip().title()
+            self._species = species_val.strip()
         else:
             raise Exception("The species should be a `str` value")
 
@@ -58,7 +58,7 @@ class Bird(Animal):
     
     @wingspan.setter
     def wingspan(self, num):
-        if isinstance(num, int or float) and num > 0:
+        if num > 0:
             self._wingspan = num
         else:
             raise Exception("This must be a Positive Number > 0")
@@ -89,14 +89,18 @@ class Marsupial(Mammal):
 
 # Create a class called `Aviary` that represents an area in the zoo where birds are kept.
 class Aviary():
-    birds = []
 
-    def __init__(self, birds):
-        self.birds = birds
+    def __init__(self):
+        self.birds = []
+        
+    def add_bird(self, new_bird):
+        self.birds.append(new_bird)
  
 # Create a class called `ReptileEnclosure` that represents an area in the zoo where reptiles are kept.
 class ReptileEnclosure():
-    reptiles = []
 
-    def __init__(self, reptiles):
-        self.reptiles = reptiles
+    def __init__(self):
+        self.reptiles = []
+    
+    def add_reptile(self, new_reptile):
+        self.reptiles.append(new_reptile)
