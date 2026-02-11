@@ -1,3 +1,4 @@
+# Create main animal class
 class Animal():
     def __init__(self, name, species):
         self.name = name
@@ -34,14 +35,15 @@ class Animal():
         else:
             raise Exception("The species should be a `str` value")
 
-        
+# Create a class called `Mammal` that inherits from the `Animal` class.         
 class Mammal(Animal):
     def __init__(self, name, species):
         super().__init__(name, species)
         
     def give_birth(self):
         return f"{self.name} the {self.species} has given birth"
-        
+
+# Create a class called `Bird` that inherits from the `Animal` class.        
 class Bird(Animal):
     def __init__(self, name, species, wingspan):
         super().__init__(name, species)
@@ -56,7 +58,36 @@ class Bird(Animal):
     
     @wingspan.setter
     def wingspan(self, num):
-        if isinstance(num, int) and num > 0:
+        if isinstance(num, int or float) and num > 0:
             self._wingspan = num
         else:
-            raise Exception("This must be a Positive Int > 0")
+            raise Exception("This must be a Positive Number > 0")
+
+# Create a class called `Reptile` that inherits from the `Animal` class.        
+class Reptile(Animal):
+    def __init__(self, name, species):
+        super().__init__(name, species)
+        
+    def bask_in_sun(self):
+        return f"{self.name} the {self.species} is basking in the sun"
+
+# Create a class called `Primate` that inherits from the `Mammal` class
+class Primate(Mammal):
+    def __init__(self, name, species):
+        super().__init__(name, species)
+        
+    def climb_trees(self):
+        return f"{self.name} the {self.species} is climbing trees"
+
+# Create a class called `Marsupial` that inherits from the `Mammal` class.
+class Marsupial(Mammal):
+    def __init__(self, name, species):
+        super().__init__(name, species)
+        
+    def carry_baby(self):
+        return f"{self.name} the {self.species} is carrying its baby"
+
+# Create a class called `Aviary` that represents an area in the zoo where birds are kept.
+
+
+# Create a class called `ReptileEnclosure` that represents an area in the zoo where reptiles are kept.
