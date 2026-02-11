@@ -88,6 +88,15 @@ class Marsupial(Mammal):
         return f"{self.name} the {self.species} is carrying its baby"
 
 # Create a class called `Aviary` that represents an area in the zoo where birds are kept.
+class Aviary():
+    birds = []
 
-
+    def __init__(self, birds):
+        self.birds = birds
+ 
 # Create a class called `ReptileEnclosure` that represents an area in the zoo where reptiles are kept.
+class ReptileEnclosure():
+    reptiles = []
+
+    def __init__(self, reptiles):
+        self.reptiles = reptiles

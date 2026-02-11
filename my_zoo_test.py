@@ -1,4 +1,4 @@
-from zoo_manager import Animal, Mammal, Bird, Reptile, Primate, Marsupial
+from zoo_manager import Animal, Mammal, Bird, Reptile, Primate, Marsupial, Aviary, ReptileEnclosure
 # Create an instance of the Animal class
 simba = Animal('Simba', 'Lion')
 
@@ -35,6 +35,13 @@ print(kanga)
 print(kanga.carry_baby())
 
 # Create an instance of the Aviary class
+def test_aviary():
+    aviary = Aviary()
+    assert isinstance(aviary.birds, list)
+    
 
 # Create an instance of the ReptileEnclosure class
+def test_reptile_enclosure():
+    reptile_enclosure = ReptileEnclosure()
+    assert isinstance(reptile_enclosure.reptiles, list)
     
